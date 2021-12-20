@@ -20,6 +20,10 @@ code {
   border: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 button {
   padding: 8px 16px;
   border: none;
@@ -45,6 +49,15 @@ button {
 }
 
 
+main {
+  width:  100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content:  center;
+  align-items:  center;
+  background-color:  #FFFFFF;
+  font-family:  sans-serif;
 
+}
 
 

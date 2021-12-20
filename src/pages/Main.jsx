@@ -1,23 +1,33 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from "../components/Card/Card";
-import {AppContext} from "../App";
+import {getMenuList} from "../api";
 
 const Main = () => {
-    const {menulist} = useContext(AppContext)
+    const [menulist, setMenulist] = useState([])
+
+    useEffect(() => {
+        getMenuList().then((response) => setMenulist(response))
+        // const response = cards
+
+    }, [])
+
 
     if (!menulist.length) {
-        return  (
+        return (
             <div>...Loading</div>
         )
     }
     return (
-        <div className="container">
+        <div className="container" style={{flexDirection: 'column'}}>
             <h1 className="container__title">Menu</h1>
-            {menulist.map((card) => {
-                return (
-                    <Card key={card.id} card={card}/>
-                )
-            })}
+            <div style={{display: 'flex'}}>
+                {menulist.map((card) => {
+                    return (
+                        <Card key={card.id} card={card}/>
+                    )
+                })}
+            </div>
+
         </div>
     );
 };

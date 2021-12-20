@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useParams} from "react-router-dom";
-import './Send.css'
+import '../PageStyles/Send.scss'
 
 const Send = () => {
     const {menuId} = useParams()
@@ -9,9 +9,12 @@ const Send = () => {
 
     function sendUserData(e) {
         e.preventDefault()
-        localStorage.setItem('name', name)
-        localStorage.setItem('phone', phone)
-        localStorage.setItem('menuId',menuId)
+        const order = {
+            name: name,
+            phone: phone,
+            menuId: menuId
+        }
+        localStorage.setItem('order', JSON.stringify(order))
     }
 
     return (
