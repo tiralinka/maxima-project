@@ -25,3 +25,15 @@ $dark: #51443d;
 .card__description {
     color: #725E54;
 }
+
+@media (max-width: 1024px) {
+    .card {
+        min-width: auto;
+        width: 42%;
+        position: relative;
+
+        & > img {
+            width: 100%;
+        }
+    }
+}

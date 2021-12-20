@@ -3,32 +3,37 @@ let posts = [
         id: 1,
         title: 'Pizza',
         description: 'Hot',
-        price: 'This section is under development',
+        price: 300,
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
     },
     {
         id: 2,
         title: 'Burgers',
         description: 'Meaty',
-        price: 'This section is under development',
+        price: 999,
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
 
     },
     {
         id: 3,
         title: 'Sushi',
         description: 'Asian',
-        price: 'This section is under development',
+        price: 400,
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
     },
     {
         id: 4,
         title: 'Desserts',
         description: 'Sweet',
-        price: 'This section is under development',
+        price: 600,
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
     },
     {
         id: 5,
         title: 'Drinks',
         description: 'Refreshing',
-        price: 'This section is under development',
+        price: 99,
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
     }
 ]
 

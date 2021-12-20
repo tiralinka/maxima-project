@@ -8,6 +8,10 @@
 
   &__links {
     display: flex;
+
+    & > li {
+      padding: 0 4px;
+    }
   }
 
   &__link {
@@ -21,9 +25,6 @@
   &__name {
     font-size: 32px;
     color: #FF6B6B;
-    display: inline;
-    top: 30px;
-    padding-top: 24px;
   }
 
   &__logo {
@@ -31,4 +32,33 @@
     margin: 4px;
   }
 
+}
+
+@media (max-width: 1024px) {
+  .header {
+
+    &__navigation {
+    }
+
+    &__links {
+      display: flex;
+    }
+
+    &__link {
+      padding: 0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    &__name {
+      font-size: 18px;
+
+      width: min-content;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+  }
 }

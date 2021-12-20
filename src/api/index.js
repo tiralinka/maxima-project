@@ -28,3 +28,13 @@ export async function getMenu(id) {
         console.log(e)
     }
 }
+
+export async function creatSome(object) {
+    try {
+        const response = await axios.post(baseUrl + 'post' + '/', object)
+        return response.data
+    } catch (e) {
+        console.log(e)
+    }
+}
+

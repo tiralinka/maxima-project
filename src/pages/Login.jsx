@@ -9,7 +9,6 @@ const Login = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
 
-
     async function handleLogin(e) {
         e.preventDefault()
         const users = await getUsers()

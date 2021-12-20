@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import '../PageStyles/Send.scss'
 
 const Send = () => {
+    let navigate = useNavigate();
     const {menuId} = useParams()
-    const [phone, setPhone] = useState('')
+    const [phone, setPhone] = useState('+7')
     const [name, setName] = useState('')
 
     function sendUserData(e) {
@@ -14,7 +15,11 @@ const Send = () => {
             phone: phone,
             menuId: menuId
         }
-        localStorage.setItem('order', JSON.stringify(order))
+        const prevOrders = JSON.parse(localStorage.getItem('orders'))
+        const newOrders = [...prevOrders, order ]
+        localStorage.setItem('orders', JSON.stringify(newOrders))
+        alert('Ваша заявка создана! Ожидайте.')
+        return navigate('/menu')
     }
 
     return (
