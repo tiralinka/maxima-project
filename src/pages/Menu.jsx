@@ -1,34 +1,36 @@
-import React, {useContext} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
-import {AppContext} from "../App";
-import Card from "../components/Card/Card"
+import {getMenu} from "../api";
 
 const Menu = () => {
-    const {menulist} = useContext(AppContext)
+    const [menu, setMenu] = useState()
     let navigate = useNavigate();
     let {id} = useParams();
 
-    const menu = menulist.find((item) => item.id === Number(id))
+    useEffect(() => {
+        getMenu(id).then((res) => setMenu(res))
+    }, [])
 
     if (!menu) {
         return (
             <div>
-                Food is not found!
+                Loading...
             </div>
         )
     }
+    const {title, description, price} = menu
 
     return (
         <div className="container">
-            <h2 className="container__title">Menu</h2>
 
             <div className="container__card card">
-                <h2>{menu.title}</h2>
-                <p>{menu.description}</p>
-                <span>{menu.price}р</span>
+                <h2>{title}</h2>
+                <p>{description}</p>
+                <span>{price}рублей.</span>
 
                 <button onClick={() => navigate(`/send/${id}`)}>Order</button>
             </div>
+
         </div>
     );
 };

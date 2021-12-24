@@ -1,15 +1,18 @@
 import React, {useContext, useState} from 'react';
 import {AppContext} from "../App";
-import {users} from "../database";
-import './Login.css'
+import '../PageStyles/Login.scss'
+import {getUsers} from "../api";
+
 
 const Login = () => {
     const {setIsAuth} = useContext(AppContext)
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
 
-    function handleLogin(e) {
+    async function handleLogin(e) {
         e.preventDefault()
+        const users = await getUsers()
+
         const isUser = users.find((item) => item.login === login)
         if (!isUser) {
             return alert('no such user!')
@@ -22,20 +25,20 @@ const Login = () => {
     }
 
     return (
-        <div className="Loginform">
-            <h1 className="Loginform__title">Login</h1>
+        <div className="login">
+            <h1 className="login__title">Login</h1>
             <form onSubmit={handleLogin}>
-                <input className="Loginform__input" type="text"
+                <input className="login__input" type="text"
                        placeholder="login"
                        value={login}
                        onChange={(e) => setLogin(e.target.value)}
                 />
-                <input className="Loginform__input" type="text"
+                <input className="login__input" type="text"
                        placeholder="password"
                        value={password}
                        onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="Loginform__button" type="submit">Enter</button>
+                <button className="login__button" type="submit">Enter</button>
             </form>
         </div>
     );

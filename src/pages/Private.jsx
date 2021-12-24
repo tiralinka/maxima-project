@@ -1,43 +1,50 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {AppContext} from "../App";
 import Login from "./Login";
 
 const Private = () => {
-    const {isAuth, menulist} = useContext(AppContext)
+    const {isAuth} = useContext(AppContext)
+    const [orders, setOrders] = useState([])
+
+    useEffect(() => {
+        const getOrders = JSON.parse(localStorage.getItem('orders'))
+        setOrders(getOrders)
+
+    }, [])
 
     if (!isAuth) {
         return (
-            <Login />
+            <Login/>
         )
     }
 
-    const menuId = localStorage.getItem('menuId')
-    const name = localStorage.getItem('name')
-    const phone = localStorage.getItem('phone')
-
-    if (menuId && name && phone) {
-        const menu = menulist.find(menu => menu.id == menuId)
+    if (!orders.length) {
         return (
-            <div>
+            <div style={{padding: 16}}>
                 <h2>Administrator</h2>
                 <div>
-                    <h3>{name}</h3>
-                    <p>{phone}</p>
-                    <span>{menu.title}</span>
+                    No orders
                 </div>
             </div>
-        );
+        )
+
     }
 
     return (
         <div>
             <h2>Administrator</h2>
-            <div>
-                No orders
-            </div>
+            {orders.map((order) => {
+                return (
+                    <div style={{padding: 16}}>
+                        <h3>{order.name}</h3>
+                        <p>{order.phone}</p>
+                        <span>{order.menuId}</span>
+                    </div>
+                )
+            })}
         </div>
-    )
 
+    );
 
 };
 

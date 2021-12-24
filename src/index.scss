@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  border: 5px solid teal;
 }
 
 code {
@@ -17,7 +18,10 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
@@ -40,11 +44,22 @@ button {
 }
 
 .container__title {
-  color: #51443d;
   display: block;
+  width: 100%;
+  text-align: center;
+  color: #51443d;
 }
 
 
+main {
+  width:  100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content:  center;
+  align-items:  center;
+  background-color:  #FFFFFF;
+  font-family:  sans-serif;
 
+}
 
 

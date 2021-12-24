@@ -1,3 +1,5 @@
+$dark: #51443d;
+
 .card {
     padding: 8px;
     margin: 8px;
@@ -17,9 +19,21 @@
 }
 
 .card__title {
-    color: #51443d;
+    color: $dark;
 }
 
 .card__description {
     color: #725E54;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        min-width: auto;
+        width: 42%;
+        position: relative;
+
+        & > img {
+            width: 100%;
+        }
+    }
 }
