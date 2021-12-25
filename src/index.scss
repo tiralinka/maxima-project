@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  border: 5px solid teal;
+  //border: 5px solid teal;
+
 }
 
 code {
@@ -36,6 +37,7 @@ button {
 }
 
 .container {
+  margin-top: 90px;
   display: flex;
   flex-direction: initial;
   flex-wrap: wrap;
@@ -48,16 +50,18 @@ button {
   width: 100%;
   text-align: center;
   color: #51443d;
+  padding: 12px 0;
 }
 
 
 main {
+  padding: 32px;
   width:  100%;
   min-height: 100vh;
   display: flex;
   justify-content:  center;
   align-items:  center;
-  background-color:  #FFFFFF;
+  background-color: #f6f6f6;
   font-family:  sans-serif;
 
 }

@@ -1,6 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {AppContext} from "../App";
 import Login from "./Login";
+import {createItem, getMenuList} from "../api";
+import Card from "../components/Card/Card";
 
 const Private = () => {
     const {isAuth} = useContext(AppContext)
@@ -20,8 +22,8 @@ const Private = () => {
 
     if (!orders.length) {
         return (
-            <div style={{padding: 16}}>
-                <h2>Administrator</h2>
+            <div>
+                <h2>Orders List</h2>
                 <div>
                     No orders
                 </div>
@@ -32,7 +34,7 @@ const Private = () => {
 
     return (
         <div>
-            <h2>Administrator</h2>
+            <h2>Orders List</h2>
             {orders.map((order) => {
                 return (
                     <div style={{padding: 16}}>

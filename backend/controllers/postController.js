@@ -4,14 +4,14 @@ let posts = [
         title: 'Pizza',
         description: 'Hot',
         price: 300,
-        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/25/01e249ae0e33d3b18df07774774828fc-full.jpg'
     },
     {
         id: 2,
         title: 'Burgers',
         description: 'Meaty',
         price: 999,
-        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/25/6e24e89b5eaf81f0d55c06a77b6e79de-full.jpg'
 
     },
     {
@@ -19,21 +19,21 @@ let posts = [
         title: 'Sushi',
         description: 'Asian',
         price: 400,
-        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/25/36f062aab999db24699b01f8e0a9e80f-full.jpg'
     },
     {
         id: 4,
         title: 'Desserts',
         description: 'Sweet',
         price: 600,
-        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/25/dc043634b7faa5131dfa4b5272499c68-full.jpg'
     },
     {
         id: 5,
         title: 'Drinks',
         description: 'Refreshing',
         price: 99,
-        image: 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+        image: 'https://cdn1.savepice.ru/uploads/2021/12/25/d423e5f933306ebc932ad40f524d332b-full.jpg'
     }
 ]
 

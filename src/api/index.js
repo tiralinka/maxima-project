@@ -29,7 +29,7 @@ export async function getMenu(id) {
     }
 }
 
-export async function creatSome(object) {
+export async function createItem(object) {
     try {
         const response = await axios.post(baseUrl + 'post' + '/', object)
         return response.data

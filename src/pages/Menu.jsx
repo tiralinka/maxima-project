@@ -24,9 +24,10 @@ const Menu = () => {
         <div className="container">
 
             <div className="container__card card">
+
                 <h2>{title}</h2>
                 <p>{description}</p>
-                <span>{price}рублей.</span>
+                <span>{price} рублей</span>
 
                 <button onClick={() => navigate(`/send/${id}`)}>Order</button>
             </div>

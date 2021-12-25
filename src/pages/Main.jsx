@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Card from "../components/Card/Card";
-import {creatSome, getMenuList} from "../api";
+import {createItem, getMenuList} from "../api";
 import '../PageStyles/Main.scss'
 import {AppContext} from "../App";
 
@@ -11,7 +11,7 @@ const Main = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(0)
-    const link = 'https://cdn1.savepice.ru/uploads/2021/12/20/ac5feb3f0862332a0a5235eaa3f8a180-full.jpg'
+    const [link, setLink] = useState('')
 
     useEffect(() => {
         getMenuList().then((response) => setMenulist(response))
@@ -34,29 +34,38 @@ const Main = () => {
             image: link
         }
         console.log("newMenu", newMenu)
-        creatSome(newMenu).then((res) => setMenulist(res))
+        createItem(newMenu).then((res) => setMenulist(res))
         setTitle('')
         setDescription('')
         setPrice(0)
+        setLink('')
     }
 
     return (
         <div className="container">
 
             {isAuth && (
-                <form onSubmit={createMenu} style={{display: 'flex', flexDirection: 'column'}}>
+                <form className="create-menu-form" onSubmit={createMenu} style={{display: 'flex', flexDirection: 'column'}}>
                     <input type="text"
+                           required
                            placeholder="title"
                            value={title}
                            onChange={(e) => setTitle(e.target.value)}
                     />
                     <input type="text" placeholder="description"
+                           required
                            value={description}
                            onChange={(e) => setDescription(e.target.value)}
                     />
                     <input type="number" placeholder="price"
+                           required
                            value={price}
                            onChange={(e) => setPrice(e.target.value)}
+                    />
+                    <input type="text" placeholder="insert link"
+                           required
+                           value={link}
+                           onChange={(e) => setLink(e.target.value)}
                     />
                     <img src={link} alt=""/>
                     <button type="submit">Create Menu Item</button>

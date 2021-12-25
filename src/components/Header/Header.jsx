@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {AppContext} from "../../App";
-import './Navigation.scss'
+import './Header.scss'
 
 
 const publicLinks = [
@@ -11,6 +11,11 @@ const publicLinks = [
     }, {
         to: "/Menu",
         text: 'Menu'
+
+    }, {
+        to: "/Search",
+        text: 'Search'
+
     },
 ]
 
@@ -28,7 +33,7 @@ const privateLinks = [
     }
 ]
 
-const Navigation = () => {
+const Header = () => {
     const {isAuth, setIsAuth} = useContext(AppContext)
     let navigate = useNavigate();
 
@@ -37,11 +42,16 @@ const Navigation = () => {
     return (
         <header className="header">
             <nav className="header__navigation">
-                <img className="header__logo"
-                     src='https://www.tozlumikrofon.com/wp-content/uploads/2017/07/kalp-yemek.png'/>
-                <h1 className="header__name">Food delivery service</h1>
-                {!isAuth && <button onClick={() => navigate(`/private`)}>Login</button>}
-                {isAuth && <button onClick={() => setIsAuth(false)}>Logout</button>}
+                <div className="header__logoname">
+                    <Link to={'/'}>
+                        <img className="header__logo"
+                             src='https://cdn1.savepice.ru/uploads/2021/12/24/c0a1de8fb44f05d0c6df98094f869696-full.png'
+                             alt={'Logo Yummy Express'}/>
+                    </Link>
+                    <h1 className="header__name">
+                        <Link to={'/'}>Yummy Express</Link>
+                    </h1>
+                </div>
                 <ul className="header__links">
                     {links.map(link => {
                         return (
@@ -51,9 +61,12 @@ const Navigation = () => {
                         )
                     })}
                 </ul>
+                    {!isAuth && <button className="header__button" onClick={() => navigate(`/private`)}>Login</button>}
+                    {isAuth && <button onClick={() => setIsAuth(false)}>Logout</button>}
+
             </nav>
         </header>
     );
 };
 
-export default Navigation;
+export default Header;
